@@ -15,6 +15,15 @@ public class SignupLoginPage extends components{
 	}
 	
 	// LOCATORS
+	@FindBy(xpath = "//h2[text()='Login to your account']")
+		private WebElement loginToYourAccountTitle;
+	@FindBy(xpath = "//input[@data-qa='login-email']")
+		private WebElement loginEmailAddress;
+	@FindBy(name = "password")
+		private WebElement password;
+	@FindBy(xpath = "//button[@data-qa='login-button']")
+		private WebElement loginBtn;
+	
 	@FindBy(xpath = "//h2[text()='New User Signup!']")
 		private WebElement newUserSignupTitle;
 	@FindBy(name = "name")
@@ -27,6 +36,21 @@ public class SignupLoginPage extends components{
 	
 	
 	// ACTION METHODS
+	public boolean verifyLoginToYourAccountIsVisible() {
+		return loginToYourAccountTitle.isDisplayed();
+	}
+	
+	public void enterLoginCredentials(String usersEmail, String usersPassword) {
+		loginEmailAddress.sendKeys(usersEmail);
+		password.sendKeys(usersPassword);
+	}
+	
+	public void clickLoginBtn() {
+		loginBtn.click();
+	}
+	
+	                    /////
+	
 	public boolean verifynewUserSignupIsVisible() {
 		return newUserSignupTitle.isDisplayed();
 	}
@@ -35,7 +59,7 @@ public class SignupLoginPage extends components{
 		name.sendKeys(usersName);
 	}
 	
-	public void enterEmail(String usersEmail) {
+	public void enterSignUpEmail(String usersEmail) {
 		signupEmailAddress.sendKeys(usersEmail);
 	}
 	

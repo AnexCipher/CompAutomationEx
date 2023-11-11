@@ -12,7 +12,7 @@ public class registerUserTest extends baseTest{
 		homePage.clickSignUpLoginBtn();
 		softAssert.assertTrue(signupLoginPage.verifynewUserSignupIsVisible());
 		signupLoginPage.enterName("John Adams");
-		signupLoginPage.enterEmail("JohnAdams3@gmail.com");
+		signupLoginPage.enterSignUpEmail("JohnAdams2@gmail.com");
 		signupLoginPage.clickSignupBtn();
 		signupAccInfoPage.selectTitle("mr");
 		signupAccInfoPage.enterPassword("12345633");
